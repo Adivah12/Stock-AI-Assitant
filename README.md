@@ -22,12 +22,12 @@ Users can:
 
 ### Phase 1 (Completed)
 
-✅ Search Indonesian stocks by ticker symbol
-✅ Fetch stock data from Yahoo Finance API
-✅ Interactive stock chart using Plotly
-✅ Moving Average 20 (MA20) indicator
-✅ AI-generated stock summary analysis
-✅ Historical stock data table
+*✅ Search Indonesian stocks by ticker symbol
+*✅ Fetch stock data from Yahoo Finance API
+*✅ Interactive stock chart using Plotly
+*✅ Moving Average 20 (MA20) indicator
+*✅ AI-generated stock summary analysis
+*✅ Historical stock data table
 
 ---
 
