@@ -1,57 +1,146 @@
-Stock AI Assistant
+# 📈 Stock AI Assistant
 
-A simple AI-powered stock analysis dashboard built with Streamlit.
+AI-powered stock analysis dashboard for Indonesian stocks built with **Streamlit**, **Yahoo Finance**, and **OpenAI**.
 
-Features
-Phase 1
-Search Indonesian stocks by ticker symbol
-Fetch stock price data using Yahoo Finance API
-Interactive stock price chart using Plotly
-Moving Average 20 (MA20) indicator
-AI-generated stock summary analysis
-Historical stock data table
-Tech Stack
-Python
-Streamlit
-Plotly
-yfinance
-OpenAI API
-Project Structure
+---
+
+## Overview
+
+Stock AI Assistant is a web-based dashboard that helps users analyze Indonesian stock market data interactively.
+
+Users can:
+
+* Search stock data by ticker symbol
+* View historical stock prices
+* Analyze moving averages
+* Get AI-generated stock insights
+* Explore stock performance visually
+
+---
+
+## Features
+
+### Phase 1 (Completed)
+
+✅ Search Indonesian stocks by ticker symbol
+✅ Fetch stock data from Yahoo Finance API
+✅ Interactive stock chart using Plotly
+✅ Moving Average 20 (MA20) indicator
+✅ AI-generated stock summary analysis
+✅ Historical stock data table
+
+---
+
+## Tech Stack
+
+* **Python**
+* **Streamlit**
+* **Plotly**
+* **yfinance**
+* **OpenAI API**
+* **Pandas**
+
+---
+
+## Project Structure
+
+```bash
 app/
 ├── ai/
 │   └── agent.py
+│
+├── pipeline/
+│   ├── Preprocess.py
+│   └── storage.py
 │
 ├── stocks/
 │   ├── fetcher.py
 │   └── indicators.py
 │
-└── main.py
-How to Run
+├── utils/
+│
+main.py
+requirements.txt
+```
+
+---
+
+## Installation
+
+Clone repository:
+
+```bash
+git clone https://github.com/your-username/stock-ai-assistant.git
+cd stock-ai-assistant
+```
 
 Install dependencies:
 
+```bash
 pip install -r requirements.txt
+```
 
-Run Streamlit:
+---
 
-streamlit run app.py
-Example Features
-Stock Price Chart
-Closing Price
-Moving Average 20
-AI Summary
+## Run the App
 
-Example:
+Start Streamlit locally:
 
+```bash
+streamlit run main.py
+```
+
+Then open:
+
+```bash
+http://localhost:8501
+```
+
+---
+
+## Example Output
+
+### Stock Price Chart
+
+* Closing Price
+* MA20 Trend Line
+
+### AI Summary Example
+
+```text
 BBCA.JK shows a bullish short-term trend with price moving above MA20.
 Momentum remains positive with stable recent trading activity.
-Future Roadmap (Phase 2)
+```
 
-Planned improvements:
+---
 
-RSI indicator
-Candlestick chart
-Bollinger Bands
-Buy / Hold / Sell AI recommendation
-Multi-stock comparison
-News sentiment analysis
+## Data Source
+
+Stock market data is retrieved from:
+
+* Yahoo Finance (`yfinance`)
+
+---
+
+## Roadmap — Phase 2
+
+Planned next features:
+
+* RSI Indicator
+* Candlestick Chart
+* Bollinger Bands
+* Buy / Hold / Sell recommendation
+* Multi-stock comparison
+* News sentiment analysis
+* Portfolio watchlist
+
+---
+
+## Author
+
+**Aditya Vahreza**
+
+Machine Learning & Data Science Enthusiast
+
+```
+```
