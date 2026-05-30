@@ -99,6 +99,10 @@ http://localhost:8501
 ---
 
 ## Example Output
+<img width="1800" height="904" alt="image" src="https://github.com/user-attachments/assets/17c82d92-7fe9-43ae-aa38-d8eb97050d38" />
+<img width="1861" height="568" alt="image" src="https://github.com/user-attachments/assets/eda85f5b-c29f-4fe9-b00c-110e297bfdc3" />
+
+
 
 ### Stock Price Chart
 
