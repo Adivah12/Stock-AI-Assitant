@@ -1,14 +1,35 @@
 import pandas as pd 
+import ta
 
 def calculate_indicators(df):
     df = df.copy()
     # Tambahkan indikator teknikaL
 
     # Moving Average 20 hari
-    df["MA_20"] = df["Close"].rolling(window=20).mean()
+    df["MA_20"] = ta.trend.SMAIndicator(
+        close=df["Close"],
+        window=20
+        ).sma_indicator()
 
     # daily return
     df["Daily_Return"] = df["Close"].pct_change()*100
+
+    # RSI 14 hari
+    df["RSI_14"] = ta.momentum.RSIIndicator(
+        close=df["Close"],
+        window=14
+        ).rsi()
+
+    # Bollinger bands
+    bollinger = ta.volatility.BollingerBands(   
+        close=df["Close"],
+        window=20,
+        window_dev=2
+    )
+
+    df["BB_Upper"] = bollinger.bollinger_hband()
+    df["BB_Middle"] = bollinger.bollinger_mavg()
+    df["BB_Lower"] = bollinger.bollinger_lband()
     
     return df
 
