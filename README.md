@@ -125,17 +125,41 @@ Stock market data is retrieved from:
 
 ---
 
-## Roadmap — Phase 2
+🗺️ Project Roadmap
+Phase 1 — AI Stock Assistant Sederhana
+ Stock data fetching
+ MA20 indicator
+ AI-generated stock summary
+ Interactive stock chart
+ Historical stock data
+Phase 2 — Technical Analysis Enhancement
+ Candlestick chart
+ RSI 14
+ Bollinger Bands
+ Volume analysis
+ 20-day average volume
+ Basic trend analysis
+Phase 3 — AI Technical Intelligence
 
-Planned next features:
+Planned improvements:
 
-* RSI Indicator
-* Candlestick Chart
-* Bollinger Bands
-* Buy / Hold / Sell recommendation
-* Multi-stock comparison
-* News sentiment analysis
-* Portfolio watchlist
+ AI technical insight
+ AI analysis using multiple indicators
+ Technical signal generation
+ Buy / Hold / Sell analysis
+ Explainable AI analysis
+ News sentiment analysis
+Phase 4 — Advanced Stock Assistant
+
+Planned improvements:
+
+ Multi-stock comparison
+ Portfolio monitoring
+ Watchlist
+ News aggregation
+ Advanced sentiment analysis
+ Conversational stock assistant
+ Agentic AI workflow
 
 ---
 
