@@ -58,3 +58,14 @@ Stock-AI-Assistant/
 ├── requirements.txt         # Project dependencies
 ├── README.md                # Project documentation
 └── .gitignore               # Git ignore rules
+
+## ⚙️ Installation & Setup
+
+### 1. Clone Repository
+```bash
+git clone [https://github.com/your-username/stock-ai-assistant.git](https://github.com/your-username/stock-ai-assistant.git)
+cd stock-ai-assistant
+2. Install DependenciesBashpip install -r requirements.txt
+3. Environment VariablesCreate a .env file in the root directory and add your OpenAI API Key:Code snippetOPENAI_API_KEY=your_openai_api_key_here
+4. Run ApplicationBashstreamlit run main.py
+Open your browser at http://localhost:8501.📸 Dashboard PreviewTechnical Analysis & ChartsAI Summary & Insights💡 Example AI SummaryBBCA.JK shows a bullish short-term trend with price moving above MA20. Momentum remains positive with stable recent trading activity, while RSI indicates healthy buying volume without entering overbought territory.🗺️ Project Roadmap[x] Phase 1 — Core AssistantData fetching, basic MA20, Plotly chart, historical table, basic AI summary.[x] Phase 2 — Technical AnalysisCandlestick, RSI 14, Bollinger Bands, Volume 20-day avg, trend analysis.[ ] Phase 3 — Technical Intelligence (In Progress)Multi-indicator AI reasoning, Buy/Hold/Sell signal generation, Explainable AI, News Sentiment.[ ] Phase 4 — Advanced Features (Planned)Watchlist, Portfolio tracking, Multi-stock side-by-side comparison, Conversational AI Agent.👤 AuthorAditya VahrezaMachine Learning & Data Science Enthusiast
