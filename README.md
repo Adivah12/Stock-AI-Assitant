@@ -1,71 +1,68 @@
 # 📈 Stock AI Assistant
 
-AI-powered stock analysis dashboard for Indonesian stocks built with **Streamlit**, **Yahoo Finance**, and **OpenAI**.
+Stock AI Assistant is a simple AI-powered stock analysis dashboard built with Python and Streamlit.
+
+The project is designed to provide basic stock analysis for Indonesian stocks using historical market data, technical indicators, interactive charts, and AI-generated summaries.
 
 ---
 
-## Overview
+## 🚀 Features
 
-Stock AI Assistant is a web-based dashboard that helps users analyze Indonesian stock market data interactively.
+### Phase 1 — AI Stock Assistant Sederhana
 
-Users can:
+- ✅ Search Indonesian stocks by ticker symbol
+- ✅ Fetch stock data using Yahoo Finance (`yfinance`)
+- ✅ Select analysis period
+- ✅ AI-generated stock summary analysis
+- ✅ Historical stock data table
+- ✅ Interactive stock price chart using Plotly
+- ✅ Moving Average 20 (MA20) indicator
 
-* Search stock data by ticker symbol
-* View historical stock prices
-* Analyze moving averages
-* Get AI-generated stock insights
-* Explore stock performance visually
+### Phase 2 — Technical Analysis Enhancement
 
----
-
-## Features
-
-### Phase 1 (Completed)
-
-### Phase 1 (Completed)
-
-* ✅ Search Indonesian stocks by ticker symbol
-* ✅ Fetch stock data from Yahoo Finance API
-* ✅ Interactive stock chart using Plotly
-* ✅ Moving Average 20 (MA20) indicator
-* ✅ AI-generated stock summary analysis
-* ✅ Historical stock data table
+- ✅ Candlestick chart
+- ✅ Moving Average 20 (MA20)
+- ✅ RSI 14 (Relative Strength Index)
+- ✅ RSI overbought and oversold status
+- ✅ Bollinger Bands
+- ✅ Volume trading analysis
+- ✅ 20-day average volume comparison
+- ✅ Current trend analysis
 
 ---
 
-## Tech Stack
+## 🛠️ Tech Stack
 
-* **Python**
-* **Streamlit**
-* **Plotly**
-* **yfinance**
-* **OpenAI API**
-* **Pandas**
+- Python
+- Streamlit
+- Plotly
+- yfinance
+- pandas
+- ta
+- OpenAI API
 
 ---
 
-## Project Structure
+## 📂 Project Structure
 
-```bash
-app/
-├── ai/
-│   └── agent.py
+```text
+Stock-AI-Assistant/
 │
-├── pipeline/
-│   ├── Preprocess.py
-│   └── storage.py
+├── app/
+│   ├── ai/
+│   │   └── agent.py
+│   │
+│   └── stocks/
+│       ├── fetcher.py
+│       └── indicators.py
 │
-├── stocks/
-│   ├── fetcher.py
-│   └── indicators.py
+├── tests/
+│   └── test_indicators.py
 │
-├── utils/
-│
-main.py
-requirements.txt
-```
-
----
+├── main.py
+├── requirements.txt
+├── README.md
+└── .gitignore
 
 ## Installation
 
