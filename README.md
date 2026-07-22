@@ -1,51 +1,37 @@
-# 📈 Stock AI Assistant
-
+📈 Stock AI Assistant
 An AI-powered stock analysis dashboard designed to analyze Indonesian stock market trends using historical data, technical indicators, interactive charts, and AI-generated insights.
 
----
+🌟 Overview
+Stock AI Assistant simplifies technical analysis for the Indonesian stock market (.JK tickers). Built with Python and Streamlit, it fetches live and historical market data, calculates key technical indicators, and leverages OpenAI to generate easy-to-understand stock summaries.
 
-## 🌟 Overview
+🚀 Key Features
+🔹 Phase 1 — Core Functionality
+🔍 Ticker Search: Search Indonesian stocks by ticker symbol (e.g., BBCA.JK, TLKM.JK).
 
-**Stock AI Assistant** simplifies technical analysis for the Indonesian stock market (`.JK` tickers). Built with Python and Streamlit, it fetches live and historical market data, calculates key technical indicators, and leverages OpenAI to generate easy-to-understand stock summaries.
+📊 Market Data: Fetch historical stock data via Yahoo Finance (yfinance).
 
----
+🗓️ Custom Range: Flexible selection for analysis periods.
 
-## 🚀 Key Features
+📈 Interactive Charts: Price visualization powered by Plotly.
 
-### 🔹 Phase 1 — Core Functionality
-* 🔍 **Ticker Search:** Search Indonesian stocks by ticker symbol (e.g., `BBCA.JK`, `TLKM.JK`).
-* 📊 **Market Data:** Fetch historical stock data via Yahoo Finance (`yfinance`).
-* 🗓️ **Custom Range:** Flexible selection for analysis periods.
-* 📈 **Interactive Charts:** Price visualization powered by Plotly.
-* 🤖 **AI Summaries:** Automated stock analysis powered by OpenAI API.
-* 📋 **Data Tables:** View raw historical price and volume data.
+🤖 AI Summaries: Automated stock analysis powered by OpenAI API.
 
-### 🔹 Phase 2 — Technical Analysis
-* 🕯️ **Candlestick Charts:** High-detail price movement visualization.
-* 📉 **Moving Averages:** 20-day Moving Average (MA20) trend line.
-* 🎯 **RSI (14):** Relative Strength Index with Overbought/Oversold detection.
-* 📊 **Bollinger Bands:** Volatility bands for overextended market moves.
-* 🔊 **Volume Analysis:** Trading volume tracking against 20-day average volume.
-* ⚡ **Trend Detection:** Instant identification of short-term price trends.
+📋 Data Tables: View raw historical price and volume data.
 
----
+🔹 Phase 2 — Technical Analysis
+🕯️ Candlestick Charts: High-detail price movement visualization.
 
-## 🛠️ Tech Stack
+📉 Moving Averages: 20-day Moving Average (MA20) trend line.
 
-| Domain | Technology / Library |
-| :--- | :--- |
-| **Language** | Python |
-| **UI Framework** | Streamlit |
-| **Visualization** | Plotly |
-| **Data & Finance** | `yfinance`, `pandas`, `ta` (Technical Analysis) |
-| **AI Engine** | OpenAI API |
+🎯 RSI (14): Relative Strength Index with Overbought/Oversold detection.
 
----
+📊 Bollinger Bands: Volatility bands for overextended market moves.
 
-## 📂 Project Structure
+🔊 Volume Analysis: Trading volume tracking against 20-day average volume.
 
-```text
-Stock-AI-Assistant/
+⚡ Trend Detection: Instant identification of short-term price trends.
+
+🛠️ Tech StackDomainTechnology / LibraryLanguagePythonUI FrameworkStreamlitVisualizationPlotlyData & Financeyfinance, pandas, ta (Technical Analysis)AI EngineOpenAI API📂 Project StructurePlaintextStock-AI-Assistant/
 ├── app/
 │   ├── ai/
 │   │   └── agent.py         # AI prompt logic & OpenAI connection
@@ -58,12 +44,7 @@ Stock-AI-Assistant/
 ├── requirements.txt         # Project dependencies
 ├── README.md                # Project documentation
 └── .gitignore               # Git ignore rules
-
-## ⚙️ Installation & Setup
-
-### 1. Clone Repository
-```bash
-git clone [https://github.com/your-username/stock-ai-assistant.git](https://github.com/your-username/stock-ai-assistant.git)
+⚙️ Installation & Setup1. Clone RepositoryBashgit clone https://github.com/your-username/stock-ai-assistant.git
 cd stock-ai-assistant
 2. Install DependenciesBashpip install -r requirements.txt
 3. Environment VariablesCreate a .env file in the root directory and add your OpenAI API Key:Code snippetOPENAI_API_KEY=your_openai_api_key_here
