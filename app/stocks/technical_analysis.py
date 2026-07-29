@@ -23,7 +23,7 @@ def build_technical_context(df, ticker):
         momentum = "RSI menunjukkan kondisi overbought"
     elif rsi < 30:
         momentum = "RSI menunjukkan kondisi oversold"
-    else:
+    else:git add README.md
         momentum = "RSI berada dalam zona netral"
 
 
