@@ -8,3 +8,6 @@ python-dotenv
 ta
 pyarrow
 duckdb
+openai
+python-dotenv
+google-genai

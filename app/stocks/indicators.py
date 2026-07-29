@@ -11,6 +11,12 @@ def calculate_indicators(df):
         window=20
         ).sma_indicator()
 
+    # Volume Moving Average 20 hari
+    df["Volume_MA_20"] = ta.trend.SMAIndicator(
+        close=df["Volume"],
+        window=20
+        ).sma_indicator()
+
     # daily return
     df["Daily_Return"] = df["Close"].pct_change()*100
 

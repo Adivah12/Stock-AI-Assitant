@@ -4,6 +4,7 @@ import plotly.graph_objects as go
 from app.stocks.fetcher import fetch_stock_data
 from app.stocks.indicators import calculate_indicators, get_trend
 from app.ai.agent import generate_stock_summary
+from app.stocks.technical_analysis import build_technical_context
 
 
 # =========================================================
@@ -373,11 +374,15 @@ def main():
                 df
             )
 
+            technical_context = build_technical_context(
+                df,
+                ticker
+            )
+
             # Generate AI Summary
             summary = generate_stock_summary(
-                df=df,
                 ticker=ticker,
-                trend=trend
+                technical_context=technical_context
             )
 
             st.success(

@@ -1,27 +1,142 @@
-import pandas as pd
+import os
 
-def generate_stock_summary(df, ticker, trend):
+from dotenv import load_dotenv
+from google import genai
+from google.genai import errors
 
-    latest = df.iloc[-1]
-    close_price = latest["Close"]
-    volume = latest["Volume"]
-    daily_return = latest["Daily_Return"]
 
-    if pd.isna(daily_return):
-        daily_return = 0
+load_dotenv()
 
-    if trend == "bulish":
-        trend_text = " menunjukkan tren naik karena harga penutupan berada di atas MA 20 hari."
-    elif trend == "downtrend":
-        trend_text = " menunjukkan tren turun karena harga penutupan berada di bawah MA 20 hari."
-    else:
-        trend_text = " menunjukkan tren sideway karena harga penutupan berada di sekitar MA 20 hari."
+api_key = os.getenv("GEMINI_API_KEY")
 
-    summary = f"""
-    anaisa saham {ticker}
-    harga penutupan terakhir adalah {close_price:.2f}
-    perubahan harian adalah {daily_return:.2f}%
-    volume perdagangan adalah {volume:,.0f}
-    secara teknikal, saham {ticker} {trend_text}
+client = genai.Client(
+    api_key=api_key
+)
+
+
+def generate_stock_summary(
+    ticker,
+    technical_context
+):
+    """"
+    Menghasilkan analisis teknikal saham menggunakan Gemini AI.
+
+    parameters
+    ----------
+    ticker : str
+        Ticker saham yang dianalisis.
+
+    technical_context : str
+        Konteks teknikal yang sudah disiapkan oleh technical_analysis.py.
+
+    Returns
+    -------
+    str
+        Hasil analisis teknikal dari Gemini
     """
-    return summary.strip()
+
+    prompt = f"""
+Anda adalah AI Technical Analyst yang membantu menjelaskan
+kondisi teknikal saham berdasarkan data indikator yang diberikan.
+
+Analisis saham:
+{ticker}
+
+Gunakan HANYA data teknikal yang tersedia di bawah ini.
+
+==============================
+TECHNICAL CONTEXT
+==============================
+
+{technical_context}
+
+==============================
+INSTRUKSI ANALISIS
+==============================
+
+Buat analisis teknikal yang ringkas, jelas, dan mudah dipahami
+oleh investor pemula.
+
+Gunakan struktur berikut:
+
+📈 Trend
+Jelaskan kondisi trend berdasarkan posisi harga terhadap MA20.
+
+💪 Momentum
+Jelaskan kondisi momentum berdasarkan RSI14.
+Sebutkan apakah kondisi:
+- Overbought
+- Oversold
+- Neutral
+
+📊 Bollinger Bands
+Jelaskan posisi harga terhadap Bollinger Bands.
+Jelaskan apakah harga:
+- Mendekati upper band
+- Mendekati lower band
+- Berada di area tengah
+- Berada di luar band
+
+📦 Volume
+Bandingkan volume saat ini dengan Volume MA20.
+Jelaskan apakah volume:
+- Mendukung pergerakan harga
+- Lemah
+- Berada di atas rata-rata
+- Berada di bawah rata-rata
+
+🔎 Overall Analysis
+Gabungkan seluruh indikator menjadi satu kesimpulan teknikal.
+Jelaskan apakah kondisi secara keseluruhan cenderung:
+- Bullish
+- Bearish
+- Netral
+- Konsolidasi
+
+Jelaskan juga jika terdapat konflik antar indikator.
+
+⚠️ Risk Note
+Sebutkan risiko teknikal yang perlu diperhatikan berdasarkan
+indikator yang tersedia.
+
+ATURAN PENTING:
+
+1. Jangan mengarang data atau angka.
+2. Jangan menggunakan data yang tidak tersedia dalam context.
+3. Jangan memberikan target harga jika tidak tersedia.
+4. Jangan menjamin harga akan naik atau turun.
+5. Jangan memberikan rekomendasi investasi absolut.
+6. Gunakan bahasa Indonesia.
+7. Analisis harus berdasarkan data teknikal yang diberikan.
+8. Gunakan paragraf singkat agar mudah dibaca.
+9. Jangan mengulang angka yang sama terlalu banyak.
+10. Fokus pada interpretasi teknikal, bukan berita atau fundamental.
+
+Berikan hasil analisis langsung tanpa menjelaskan proses berpikir Anda.
+"""
+    
+    try:
+
+        response = client.models.generate_content(
+            model="gemini-3.5-flash",
+            contents=prompt
+        )
+
+        return response.text
+
+
+    except errors.ServerError as e:
+
+        return (
+            "⚠️ Gemini AI sedang mengalami gangguan "
+            "atau kapasitas server sedang penuh. "
+            "Silakan coba lagi beberapa saat kemudian."
+        )
+
+
+    except Exception as e:
+
+        return (
+            f"⚠️ Terjadi kesalahan saat menghubungi "
+            f"Gemini API: {str(e)}"
+        )
